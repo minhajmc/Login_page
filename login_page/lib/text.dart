@@ -38,7 +38,8 @@ class Texts extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(top: 40),
           child: TextField(
-            keyboardType: TextInputType.visiblePassword,
+            keyboardType: TextInputType.number,
+            obscureText: true,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(24),

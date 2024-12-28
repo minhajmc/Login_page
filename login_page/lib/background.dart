@@ -11,8 +11,7 @@ class MyApp extends StatelessWidget {
       title: "Login Page",
       home: Scaffold(
         body: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+
           decoration: BoxDecoration(
               image: DecorationImage(
             image: NetworkImage(

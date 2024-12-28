@@ -6,21 +6,28 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 200, left: 50, right: 50, bottom: 275),
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 7,
-          color: Colors.indigo,
-          
+    return  Center(
+      child: Container(
+        
+        width: 320,
+        height: 420,
+         decoration: BoxDecoration(
+          border: Border.all(
+            width: 7,
+            color: Colors.indigo,
+            
+          ),
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.black38,
+          boxShadow: [
+            BoxShadow(color: Colors.black26, spreadRadius: 30),
+          ],
         ),
-        borderRadius: BorderRadius.circular(50),
-        color: Colors.black38,
-        boxShadow: [
-          BoxShadow(color: Colors.black26, spreadRadius: 30),
-        ],
+        child: Texts(),
+        
+        
+      
       ),
-      child:Texts(),
     );
   }
 }
