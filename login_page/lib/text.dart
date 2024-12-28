@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/screen2.dart';
 
 
 
@@ -84,7 +85,10 @@ class Texts extends StatelessWidget {
           padding: EdgeInsets.only(top: 20, left: 30, right: 30),
           child: ElevatedButton(
             onPressed: () {
-              
+              Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
+                return ScreenTwo();
+
+              }));
             },
             
             style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.red),),

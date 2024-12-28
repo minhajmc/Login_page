@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
       title: "Login Page",
       home: Scaffold(
         body: Container(
+          width: double.infinity,
+          height: double.infinity,
 
           decoration: BoxDecoration(
               image: DecorationImage(
