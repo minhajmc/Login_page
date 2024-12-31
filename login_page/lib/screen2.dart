@@ -8,6 +8,7 @@ class ScreenTwo extends StatelessWidget {
         backgroundColor: Colors.blue,
         centerTitle: true,
         title: Text("Wellcome To Second Screen"),
+
       ),
       body: Center(
         child: Column(
