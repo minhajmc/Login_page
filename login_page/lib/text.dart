@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/screen2.dart';
 
-
-
 class Texts extends StatelessWidget {
-  const Texts({super.key});
+  Texts({super.key});
+  final _userName = TextEditingController();
+  final _password = TextEditingController();
+  final _name = "minhaj";
+  final _pass = "pass";
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +14,11 @@ class Texts extends StatelessWidget {
       padding: EdgeInsets.only(top: 70, left: 20, right: 20),
       children: [
         TextField(
+          controller: _userName,
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
           ),
-          keyboardType: TextInputType.name,
           decoration: InputDecoration(
             hintText: "Enter User Name",
             hintStyle: TextStyle(color: Colors.white54),
@@ -39,7 +41,7 @@ class Texts extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(top: 40),
           child: TextField(
-            keyboardType: TextInputType.number,
+            controller: _password,
             obscureText: true,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
@@ -60,7 +62,10 @@ class Texts extends StatelessWidget {
                 color: Colors.blueAccent,
                 fontSize: 13,
               ),
-              suffixIcon: Icon(Icons.password,color: Colors.black,),
+              suffixIcon: Icon(
+                Icons.remove_red_eye,
+                color: Colors.black,
+              ),
               hintText: "Enter Password",
               hintStyle: TextStyle(color: Colors.white54, fontSize: 20),
             ),
@@ -68,7 +73,7 @@ class Texts extends StatelessWidget {
           ),
         ),
         Container(
-          padding: EdgeInsets.only(left: 50, top: 10),
+          padding: EdgeInsets.only(left: 20, top: 10),
           child: GestureDetector(
             child: Text(
               "Forget Password?",
@@ -85,23 +90,83 @@ class Texts extends StatelessWidget {
           padding: EdgeInsets.only(top: 20, left: 30, right: 30),
           child: ElevatedButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
-                return ScreenTwo();
-
-              }));
+              text(context);
             },
-            
-            style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.red),),
-            child: Text("Login",style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,shadows: [
-                Shadow(color: Colors.orange,blurRadius: 50),
-
-              ]
-            ),),
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(Colors.red),
+            ),
+            child: Text(
+              "Login",
+              style: TextStyle(color: Colors.white, fontSize: 20, shadows: [
+                Shadow(color: Colors.orange, blurRadius: 50),
+              ]),
+            ),
           ),
         ),
       ],
     );
+  }
+
+  void text(BuildContext ctx) {
+    if (_name == _userName.text && _pass == _password.text) {
+      Navigator.of(ctx).push(MaterialPageRoute(builder: (ctx) {
+        return ScreenTwo();
+      }));
+      //
+    } else {
+      //snackbar
+      // ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
+      //   backgroundColor: Colors.red,
+      //   margin: EdgeInsets.all(10),
+      //   behavior: SnackBarBehavior.floating,
+
+      //   content: Text("Invalid Username or Password")));
+
+      //popup
+      showDialog(
+          context: ctx,
+          builder: (ctx1) {
+            return AlertDialog(
+              icon: Icon(
+                Icons.warning_amber,
+                size: 50,
+              ),
+              iconColor: Colors.amber,
+              shape: Border.all(color: Colors.yellowAccent, width: 4),
+              content: Text(
+                textAlign: TextAlign.center,
+                "Invalid Input ",
+                style: TextStyle(
+                    fontSize: 20,
+                    decoration: TextDecoration.underline,
+                    color: Colors.white),
+              ),
+              contentPadding: EdgeInsets.all(30),
+              backgroundColor: const Color.fromARGB(255, 235, 83, 83),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(ctx1).pop();
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(Icons.arrow_back,size: 24,color: Colors.black,),
+                      Text(
+                        
+                        
+                        "Back",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            );
+          });
+    }
   }
 }
