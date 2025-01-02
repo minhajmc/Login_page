@@ -8,8 +8,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       title: "Login Page",
       home: Scaffold(
+        
         body: Container(
           width: double.infinity,
           height: double.infinity,
