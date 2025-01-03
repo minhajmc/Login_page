@@ -64,10 +64,10 @@ class Texts extends StatelessWidget {
                   width: 3,
                 ),
               ),
-              // helperStyle: TextStyle(
-              //   // color: Colors.blueAccent,
-              //   // fontSize: 13,
-              // ),
+              helperStyle: TextStyle(
+                color: Colors.blueAccent,
+                fontSize: 15,
+              ),
               suffixIcon: Icon(
                 Icons.remove_red_eye,
                 color: Colors.black,
