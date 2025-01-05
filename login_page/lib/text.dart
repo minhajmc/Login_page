@@ -138,50 +138,50 @@ class Texts extends StatelessWidget {
         ),
       );
 
-      //popup
-      // showDialog(
-      //     context: ctx,
-      //     builder: (ctx1) {
-      //       return AlertDialog(
-      //         icon: Icon(
-      //           Icons.warning_amber,
-      //           size: 50,
-      //         ),
-      //         iconColor: Colors.amber,
-      //         shape: Border.all(color: Colors.yellowAccent, width: 4),
-      //         content: Text(
-      //           textAlign: TextAlign.center,
-      //           "Invalid Input ",
-      //           style: TextStyle(
-      //               fontSize: 20,
-      //               decoration: TextDecoration.underline,
-      //               color: Colors.white),
-      //         ),
-      //         contentPadding: EdgeInsets.all(30),
-      //         backgroundColor: const Color.fromARGB(255, 235, 83, 83),
-      //         actions: [
-      //           TextButton(
-      //             onPressed: () {
-      //               Navigator.of(ctx1).pop();
-      //             },
-      //             child: Row(
-      //               mainAxisAlignment: MainAxisAlignment.end,
-      //               children: [
-      //                 Icon(Icons.arrow_back,size: 24,color: Colors.black,),
-      //                 Text(
+      // popup
+      showDialog(
+          context: ctx,
+          builder: (ctx1) {
+            return AlertDialog(
+              icon: Icon(
+                Icons.warning_amber,
+                size: 50,
+              ),
+              iconColor: Colors.amber,
+              shape: Border.all(color: Colors.yellowAccent, width: 4),
+              content: Text(
+                textAlign: TextAlign.center,
+                "Invalid Input ",
+                style: TextStyle(
+                    fontSize: 20,
+                    decoration: TextDecoration.underline,
+                    color: Colors.white),
+              ),
+              contentPadding: EdgeInsets.all(30),
+              backgroundColor: const Color.fromARGB(255, 235, 83, 83),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(ctx1).pop();
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(Icons.arrow_back,size: 24,color: Colors.black,),
+                      Text(
 
-      //                   "Back",
-      //                   style: TextStyle(
-      //                     fontSize: 20,
-      //                     color: Colors.black,
-      //                   ),
-      //                 ),
-      //               ],
-      //             ),
-      //           )
-      //         ],
-      //       );
-      //     });
+                        "Back",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            );
+          });
     }
   }
 }
