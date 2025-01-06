@@ -12,8 +12,6 @@ class Texts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      
-      // padding: EdgeInsets.only(top: 70, left: 20, right: 20),
       children: [
         Padding(
           padding: const EdgeInsets.all(10),
@@ -89,8 +87,7 @@ class Texts extends StatelessWidget {
                   decorationColor: Colors.blue,
                   fontSize: 20),
             ),
-            onTap: () {
-             
+            onTap: () { 
             },
           ),
         ),
@@ -114,15 +111,12 @@ class Texts extends StatelessWidget {
       ],
     );
   }
-
   void text(BuildContext ctx) {
     if (_name == _userName.text && _pass == _password.text) {
       Navigator.of(ctx).push(MaterialPageRoute(builder: (ctx) {
         return ScreenTwo();
       }));
-      //
     } else {
-      
       //snackbar
       ScaffoldMessenger.of(ctx).showSnackBar(
         SnackBar(
